@@ -3,262 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLAN | Family Office & Investment Platform</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>CLAN | Private Wealth & Asset Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #C5A059;
-            --dark: #0F0F0F;
-            --gray: #1E1E1E;
-            --white: #FFFFFF;
-            --text-muted: #A0A0A0;
+            --ubp-blue: #002A4E; /* Глубокий синий как у UBP */
+            --ubp-gold: #9D855E;
+            --bg-light: #F9F9F9;
+            --text-main: #1A1A1A;
+            --text-secondary: #555555;
         }
 
         body {
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--dark);
-            color: var(--white);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, .brand {
-            font-family: 'Cinzel', serif;
-            letter-spacing: 2px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        /* Навигация */
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 25px 5%;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1000;
         }
 
-        .brand { color: var(--gold); font-size: 1.5rem; text-decoration: none; }
-
-        nav a {
-            color: var(--white);
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--ubp-blue);
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            transition: color 0.3s;
+            letter-spacing: 1px;
         }
 
-        nav a:hover { color: var(--gold); }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin-left: 30px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
 
         /* Hero Section */
         .hero {
-            padding: 100px 0;
-            text-align: center;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0f0f0f 100%);
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            background: linear-gradient(rgba(0,42,78,0.7), rgba(0,42,78,0.7)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            color: white;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+        .hero-content { max-width: 800px; }
 
-        .btn-group { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
 
-        .btn {
-            padding: 15px 35px;
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Кнопки */
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background-color: var(--ubp-gold);
+            color: white;
             text-decoration: none;
-            text-transform: uppercase;
             font-weight: 600;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            border: 1px solid var(--gold);
-        }
-
-        .btn-gold { background: var(--gold); color: var(--dark); }
-        .btn-outline { color: var(--gold); background: transparent; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3); }
-
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 60px 0;
-            text-align: center;
-            border-top: 1px solid var(--gray);
-            border-bottom: 1px solid var(--gray);
-        }
-
-        .stat-item h3 { font-size: 2.5rem; color: var(--gold); margin: 0; }
-        .stat-item p { color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; }
-
-        /* Investment Showcase */
-        .section-title { text-align: center; margin: 80px 0 40px; }
-        .section-title h2 { color: var(--gold); }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .card {
-            background: var(--gray);
-            padding: 30px;
-            border-left: 3px solid var(--gold);
-            transition: 0.3s;
-        }
-
-        .card:hover { background: #252525; }
-
-        .status {
-            font-size: 0.7rem;
-            padding: 4px 10px;
-            border-radius: 20px;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            font-weight: bold;
+            transition: 0.3s;
         }
 
-        .status-open { background: #27ae60; color: #fff; }
-        .status-funding { background: #f1c40f; color: #000; }
+        .cta-button:hover { background-color: #86724d; }
 
-        /* Form Section */
-        .cta-box {
-            background: var(--gold);
-            color: var(--dark);
-            padding: 60px;
+        /* Секция цифр */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 60px 5%;
+            background: var(--bg-light);
             text-align: center;
-            margin: 80px 0;
         }
 
-        .cta-box h2 { margin-bottom: 20px; }
+        .stat-item h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--ubp-blue);
+            margin: 0;
+        }
 
-        .risk-warning {
+        .stat-item p {
+            color: var(--text-secondary);
             font-size: 0.8rem;
-            color: var(--text-muted);
-            text-align: center;
-            padding: 40px;
-            border: 1px dashed #333;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        /* Контентные блоки */
+        .expertise {
+            padding: 100px 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .expertise h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--ubp-blue);
+        }
+
+        .expertise p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Инвестиционная витрина (Воронка) */
+        .deals-section {
+            padding: 80px 5%;
+            background: white;
+        }
+
+        .deal-card {
+            border-top: 1px solid #ddd;
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .deal-card:hover { padding-left: 20px; border-top-color: var(--ubp-gold); }
+
+        .deal-info h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0; }
+        .deal-info p { margin: 5px 0 0; color: var(--ubp-gold); font-weight: 600; }
+
+        .status-tag {
+            font-size: 0.7rem;
+            padding: 5px 12px;
+            border: 1px solid #ccc;
+            text-transform: uppercase;
         }
 
         footer {
-            padding: 40px 0;
+            background: var(--ubp-blue);
+            color: white;
+            padding: 60px 5%;
+            font-size: 0.8rem;
             text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .stats { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .expertise, .stats-grid { grid-template-columns: 1fr; }
+            .deal-card { flex-direction: column; align-items: flex-start; gap: 20px; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <a href="#" class="brand">CLAN ASSET MGMT</a>
-        <nav>
-            <a href="#about">Система</a>
-            <a href="#investors">Инвесторам</a>
-            <a href="#deals">Сделки</a>
-            <a href="#contact">Контакт</a>
-        </nav>
-    </header>
-</div>
+<nav>
+    <a href="#" class="logo">CLAN & PARTNERS</a>
+    <div class="nav-links">
+        <a href="#about">Офис</a>
+        <a href="#investors">Инвесторам</a>
+        <a href="#deals">Сделки</a>
+        <a href="#contact">Контакт</a>
+    </div>
+</nav>
 
 <section class="hero">
-    <div class="container">
-        <h1>КАПИТАЛ ДОЛЖЕН ПЕРЕЖИТЬ СВОЕГО СОЗДАТЕЛЯ</h1>
-        <p>Мы создаем систему управления и передачи наследия между поколениями с прямым доступом к закрытым инвестиционным сделкам.</p>
-        <div class="btn-group">
-            <a href="#contact" class="btn btn-gold">Создать систему Клана</a>
-            <a href="#deals" class="btn btn-outline">Доступ к инвестициям</a>
-        </div>
+    <div class="hero-content">
+        <h1>Энергия, которая требует точности.</h1>
+        <p>Мы фокусируемся на единственной задаче — сохранение и рост капитала для частных семей и институциональных инвесторов.</p>
+        <a href="#contact" class="cta-button">Связаться с партнером</a>
     </div>
 </section>
 
-<div class="container">
-    <div class="stats">
-        <div class="stat-item">
-            <h3>$50M+</h3>
-            <p>Активы под управлением</p>
+<section class="stats-grid">
+    <div class="stat-item">
+        <h2>10 лет</h2>
+        <p>Опыт в управлении</p>
+    </div>
+    <div class="stat-item">
+        <h2>1000 лет</h2>
+        <p>Горизонт планирования</p>
+    </div>
+    <div class="stat-item">
+        <h2>Tier 1</h2>
+        <p>Уровень безопасности</p>
+    </div>
+    <div class="stat-item">
+        <h2>15.2%</h2>
+        <p>Средневзвешенный ROI</p>
+    </div>
+</section>
+
+<section class="expertise" id="about">
+    <div>
+        <h2>Наш подход: Гибкость и швейцарская экспертиза</h2>
+        <p>Размер и структура нашей организации позволяют принимать быстрые и обоснованные решения. Мы демонстрируем способность действовать оперативно, извлекая выгоду из рыночных возможностей для наших клиентов.</p>
+        <a href="#investors" style="color: var(--ubp-gold); font-weight: 700; text-decoration: none;">Подробнее о Family Office →</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=1000" alt="Building" style="width: 100%; height: 400px; object-fit: cover;">
+</section>
+
+<section class="deals-section" id="deals">
+    <h2 style="font-family: 'Playfair Display'; font-size: 2rem; margin-bottom: 40px;">Текущие размещения</h2>
+    
+    <div class="deal-card">
+        <div class="deal-info">
+            <h3>M&A: Реальный сектор (Services)</h3>
+            <p>Target ROI: 18.5% | Equity Partners Only</p>
         </div>
-        <div class="stat-item">
-            <h3>12</h3>
-            <p>Семейных офисов</p>
-        </div>
-        <div class="stat-item">
-            <h3>14.5%</h3>
-            <p>Средняя доходность (ROI)</p>
-        </div>
+        <span class="status-tag">В процессе сбора</span>
     </div>
 
-    <section id="about">
-        <div class="section-title">
-            <h2>КАК ЭТО РАБОТАЕТ</h2>
+    <div class="deal-card">
+        <div class="deal-info">
+            <h3>Real Estate: Bat Yam Development</h3>
+            <p>Target ROI: 12.0% | Secured by Assets</p>
         </div>
-        <div class="grid">
-            <div class="card">
-                <h3>01. Структура</h3>
-                <p>Юридическая и финансовая защита вашего капитала. Создание фундамента для 100-летнего процветания.</p>
-            </div>
-            <div class="card">
-                <h3>02. Управление</h3>
-                <p>Администрирование активов, аудит процессов и минимизация издержек через технологию CEO 3.0.</p>
-            </div>
-            <div class="card">
-                <h3>03. Рост</h3>
-                <p>Размещение капитала в отобранные M&A сделки и реальный сектор с твердым обеспечением.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="deals">
-        <div class="section-title">
-            <h2>INVESTMENT OPPORTUNITIES</h2>
-            <p>Текущие сделки, доступные участникам Клана</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <span class="status status-open">Open</span>
-                <h3>Project: Real Estate Yield</h3>
-                <p>Доходная коммерческая недвижимость в инфраструктурных узлах (Израиль).</p>
-                <hr style="border:0; border-top:1px solid #333; margin:20px 0;">
-                <p><strong>Цель:</strong> 12% ROI | <strong>Срок:</strong> 24 мес.</p>
-                <a href="#contact" class="btn btn-outline" style="display:block; text-align:center; padding:10px;">Детали</a>
-            </div>
-            <div class="card" style="opacity: 0.7;">
-                <span class="status status-funding">Funding</span>
-                <h3>Project: M&A Add-on</h3>
-                <p>Поглощение малого бизнеса в секторе услуг с последующей систематизацией.</p>
-                <hr style="border:0; border-top:1px solid #333; margin:20px 0;">
-                <p><strong>Цель:</strong> 18% ROI | <strong>Срок:</strong> 36 мес.</p>
-                <a href="#" class="btn btn-outline" style="display:block; text-align:center; padding:10px;">Закрыто</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="cta-box" id="contact">
-        <h2>СТАТЬ ЧАСТЬЮ СИСТЕМЫ</h2>
-        <p>Пройдите квалификацию, чтобы получить доступ к закрытым инструментам</p>
-        <br>
-        <a href="https://wa.me/ВАШ_НОМЕР" class="btn btn-gold" style="background: #000; color: #fff; border: none;">Написать в WhatsApp</a>
-        <p style="margin-top: 20px; font-size: 0.8rem;">Или забронируйте звонок через Calendly / Telegram</p>
+        <span class="status-tag" style="background: var(--ubp-gold); border: none; color: white;">Доступно</span>
     </div>
-
-    <div class="risk-warning">
-        <strong>ДИСКЛЕЙМЕР:</strong> Инвестиции связаны с рисками, включая частичную или полную потерю капитала. Прошлые результаты не гарантируют будущую доходность. Только для квалифицированных участников.
-    </div>
-</div>
+</section>
 
 <footer>
-    <p>&copy; 2026 CLAN. 1000 Years of Prosperity. All rights reserved.</p>
+    <p>© 2026 CLAN ASSET MANAGEMENT. Входя в систему, вы подтверждаете статус квалифицированного инвестора.</p>
+    <p style="opacity: 0.5; margin-top: 20px;">Политика конфиденциальности | Юридическая информация | Комплаенс</p>
 </footer>
 
 </body>
