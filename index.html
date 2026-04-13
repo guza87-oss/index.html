@@ -1,115 +1,265 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Clan Invest</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0A2463;
-      color: white;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLAN | Family Office & Investment Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C5A059;
+            --dark: #0F0F0F;
+            --gray: #1E1E1E;
+            --white: #FFFFFF;
+            --text-muted: #A0A0A0;
+        }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
 
-    h1 {
-      font-size: 36px;
-    }
+        h1, h2, h3, .brand {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background: gold;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-    }
+        /* Header */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .section {
-      margin-top: 60px;
-    }
+        .brand { color: var(--gold); font-size: 1.5rem; text-decoration: none; }
 
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      border: none;
-    }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
 
-    button {
-      margin-top: 15px;
-      padding: 12px;
-      background: gold;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  </style>
+        nav a:hover { color: var(--gold); }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0f0f0f 100%);
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+
+        .btn-group { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+        .btn {
+            padding: 15px 35px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border: 1px solid var(--gold);
+        }
+
+        .btn-gold { background: var(--gold); color: var(--dark); }
+        .btn-outline { color: var(--gold); background: transparent; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3); }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid var(--gray);
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .stat-item h3 { font-size: 2.5rem; color: var(--gold); margin: 0; }
+        .stat-item p { color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; }
+
+        /* Investment Showcase */
+        .section-title { text-align: center; margin: 80px 0 40px; }
+        .section-title h2 { color: var(--gold); }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: var(--gray);
+            padding: 30px;
+            border-left: 3px solid var(--gold);
+            transition: 0.3s;
+        }
+
+        .card:hover { background: #252525; }
+
+        .status {
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .status-open { background: #27ae60; color: #fff; }
+        .status-funding { background: #f1c40f; color: #000; }
+
+        /* Form Section */
+        .cta-box {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 60px;
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .cta-box h2 { margin-bottom: 20px; }
+
+        .risk-warning {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 40px;
+            border: 1px dashed #333;
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .stats { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="container">
+<div class="container">
+    <header>
+        <a href="#" class="brand">CLAN ASSET MGMT</a>
+        <nav>
+            <a href="#about">Система</a>
+            <a href="#investors">Инвесторам</a>
+            <a href="#deals">Сделки</a>
+            <a href="#contact">Контакт</a>
+        </nav>
+    </header>
+</div>
 
-    <h1>Капитал должен пережить своего создателя</h1>
+<section class="hero">
+    <div class="container">
+        <h1>КАПИТАЛ ДОЛЖЕН ПЕРЕЖИТЬ СВОЕГО СОЗДАТЕЛЯ</h1>
+        <p>Мы создаем систему управления и передачи наследия между поколениями с прямым доступом к закрытым инвестиционным сделкам.</p>
+        <div class="btn-group">
+            <a href="#contact" class="btn btn-gold">Создать систему Клана</a>
+            <a href="#deals" class="btn btn-outline">Доступ к инвестициям</a>
+        </div>
+    </div>
+</section>
 
-    <p>
-      Clan Invest — система управления, защиты и передачи капитала между поколениями.
-    </p>
-
-    <a href="#form" class="btn">Получить консультацию</a>
-    <a href="#invest" class="btn">Инвестировать</a>
-
-    <div class="section">
-      <h2>Проблема</h2>
-      <p>
-        Большинство капиталов исчезают уже ко 2–3 поколению из-за отсутствия системы.
-      </p>
+<div class="container">
+    <div class="stats">
+        <div class="stat-item">
+            <h3>$50M+</h3>
+            <p>Активы под управлением</p>
+        </div>
+        <div class="stat-item">
+            <h3>12</h3>
+            <p>Семейных офисов</p>
+        </div>
+        <div class="stat-item">
+            <h3>14.5%</h3>
+            <p>Средняя доходность (ROI)</p>
+        </div>
     </div>
 
-    <div class="section">
-      <h2>Решение</h2>
-      <p>
-        Мы создаем структуру управления, защиты и передачи капитала внутри семьи.
-      </p>
+    <section id="about">
+        <div class="section-title">
+            <h2>КАК ЭТО РАБОТАЕТ</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>01. Структура</h3>
+                <p>Юридическая и финансовая защита вашего капитала. Создание фундамента для 100-летнего процветания.</p>
+            </div>
+            <div class="card">
+                <h3>02. Управление</h3>
+                <p>Администрирование активов, аудит процессов и минимизация издержек через технологию CEO 3.0.</p>
+            </div>
+            <div class="card">
+                <h3>03. Рост</h3>
+                <p>Размещение капитала в отобранные M&A сделки и реальный сектор с твердым обеспечением.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="deals">
+        <div class="section-title">
+            <h2>INVESTMENT OPPORTUNITIES</h2>
+            <p>Текущие сделки, доступные участникам Клана</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <span class="status status-open">Open</span>
+                <h3>Project: Real Estate Yield</h3>
+                <p>Доходная коммерческая недвижимость в инфраструктурных узлах (Израиль).</p>
+                <hr style="border:0; border-top:1px solid #333; margin:20px 0;">
+                <p><strong>Цель:</strong> 12% ROI | <strong>Срок:</strong> 24 мес.</p>
+                <a href="#contact" class="btn btn-outline" style="display:block; text-align:center; padding:10px;">Детали</a>
+            </div>
+            <div class="card" style="opacity: 0.7;">
+                <span class="status status-funding">Funding</span>
+                <h3>Project: M&A Add-on</h3>
+                <p>Поглощение малого бизнеса в секторе услуг с последующей систематизацией.</p>
+                <hr style="border:0; border-top:1px solid #333; margin:20px 0;">
+                <p><strong>Цель:</strong> 18% ROI | <strong>Срок:</strong> 36 мес.</p>
+                <a href="#" class="btn btn-outline" style="display:block; text-align:center; padding:10px;">Закрыто</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-box" id="contact">
+        <h2>СТАТЬ ЧАСТЬЮ СИСТЕМЫ</h2>
+        <p>Пройдите квалификацию, чтобы получить доступ к закрытым инструментам</p>
+        <br>
+        <a href="https://wa.me/ВАШ_НОМЕР" class="btn btn-gold" style="background: #000; color: #fff; border: none;">Написать в WhatsApp</a>
+        <p style="margin-top: 20px; font-size: 0.8rem;">Или забронируйте звонок через Calendly / Telegram</p>
     </div>
 
-    <div class="section" id="invest">
-      <h2>Инвестиционные возможности</h2>
-      <p>
-        Внутри системы доступны структурированные инвестиционные проекты.
-      </p>
+    <div class="risk-warning">
+        <strong>ДИСКЛЕЙМЕР:</strong> Инвестиции связаны с рисками, включая частичную или полную потерю капитала. Прошлые результаты не гарантируют будущую доходность. Только для квалифицированных участников.
     </div>
+</div>
 
-    <div class="section" id="form">
-      <h2>Связаться с нами</h2>
-
-      <form action="https://formspree.io/f/your-id" method="POST">
-        <input type="text" name="name" placeholder="Имя" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Ваш запрос"></textarea>
-        <button type="submit">Отправить</button>
-      </form>
-
-    </div>
-
-  </div>
+<footer>
+    <p>&copy; 2026 CLAN. 1000 Years of Prosperity. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
