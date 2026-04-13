@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Clan Invest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0A2463;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background: gold;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-top: 60px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px;
+      background: gold;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Капитал должен пережить своего создателя</h1>
+
+    <p>
+      Clan Invest — система управления, защиты и передачи капитала между поколениями.
+    </p>
+
+    <a href="#form" class="btn">Получить консультацию</a>
+    <a href="#invest" class="btn">Инвестировать</a>
+
+    <div class="section">
+      <h2>Проблема</h2>
+      <p>
+        Большинство капиталов исчезают уже ко 2–3 поколению из-за отсутствия системы.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Решение</h2>
+      <p>
+        Мы создаем структуру управления, защиты и передачи капитала внутри семьи.
+      </p>
+    </div>
+
+    <div class="section" id="invest">
+      <h2>Инвестиционные возможности</h2>
+      <p>
+        Внутри системы доступны структурированные инвестиционные проекты.
+      </p>
+    </div>
+
+    <div class="section" id="form">
+      <h2>Связаться с нами</h2>
+
+      <form action="https://formspree.io/f/your-id" method="POST">
+        <input type="text" name="name" placeholder="Имя" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Ваш запрос"></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
